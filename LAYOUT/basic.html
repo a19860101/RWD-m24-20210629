@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .container {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col-1 {flex: 0 0 calc(100% / 12 * 1); }
+        .col-2 {flex: 0 0 calc(100% / 12 * 2); }
+        .col-3 {flex: 0 0 calc(100% / 12 * 3); }
+        .col-4 {flex: 0 0 calc(100% / 12 * 4); }
+        .col-5 {flex: 0 0 calc(100% / 12 * 5); }
+        .col-6 {flex: 0 0 calc(100% / 12 * 6); }
+        .col-7 {flex: 0 0 calc(100% / 12 * 7); }
+        .col-8 {flex: 0 0 calc(100% / 12 * 8); }
+        .col-9 {flex: 0 0 calc(100% / 12 * 9); }
+        .col-10 {flex: 0 0 calc(100% / 12 * 10); }
+        .col-11 {flex: 0 0 calc(100% / 12 * 11); }
+        .col-12 {flex: 0 0 calc(100% / 12 * 12); }
+        /* 屬性選取器 */
+        [class^="col-"]{
+            padding: 15px;
+            border: 1px solid #000;
+        }
+        /* 
+            *= 包含
+            ^= 開頭
+            $= 結尾
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore velit quisquam tenetur perferendis iusto qui tempore obcaecati laudantium voluptates impedit quas, neque accusantium necessitatibus earum facilis eveniet modi quasi?
+        </div>
+        <div class="col-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore velit quisquam tenetur perferendis iusto qui tempore obcaecati laudantium voluptates impedit quas, neque accusantium necessitatibus earum facilis eveniet modi quasi?
+        </div>
+        <div class="col-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore velit quisquam tenetur perferendis iusto qui tempore obcaecati laudantium voluptates impedit quas, neque accusantium necessitatibus earum facilis eveniet modi quasi?
+        </div>
+        <div class="col-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore velit quisquam tenetur perferendis iusto qui tempore obcaecati laudantium voluptates impedit quas, neque accusantium necessitatibus earum facilis eveniet modi quasi?
+        </div>
+        
+    </div>
+</body>
+</html>
