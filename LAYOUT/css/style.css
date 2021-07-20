@@ -1,0 +1,63 @@
+/* HEADER */
+header {
+    background:no-repeat center / cover;
+    background-image:  
+        linear-gradient(to right top,rgba(0,0,0,.2),rgba(0,0,0,.5)),
+        url("https://picsum.photos/id/52/1600/1000");
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+    color: #fff;
+}
+header .row {
+    /* height: 600px; */
+    /* align-items: center; */
+    justify-content: center;
+}
+header h1 {
+    font-size: 100px;
+}
+header p {
+    font-size: 24px;
+}
+/* subscribe */
+/* .subscribe {
+    background-color: #bebebe;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: url("https://picsum.photos/id/77/1200/400")no-repeat center / cover;
+}
+.subscribe a {
+    font-size: 36px;
+    color: #fff;
+    text-decoration: none;
+} */
+.subscribe {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.subscribe a {
+    height: 120px;
+    display: block;
+    position: relative;
+}
+.subscribe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+.subscribe span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
