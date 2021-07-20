@@ -27,7 +27,10 @@ time, mark, audio, video {
 table {
     border-collapse: collapse;
 }
-
+img {
+    vertical-align: top;
+    /* display: block; */
+}
 /* ----------------------- */
 .w-100 {
     width: 100%;

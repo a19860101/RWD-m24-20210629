@@ -114,3 +114,39 @@ header p {
     display: inline-block;
     padding: 10px;
 }
+
+/* promotion */
+#promotion img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#promotion .content {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#promotion a {
+    display: flex;
+    color: #222;
+    text-decoration: none;
+}
+.promotion-info {
+    position: relative;
+    width: 100%;
+    
+}
+.promotion-title,.promotion-price {
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.promotion-price {
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
