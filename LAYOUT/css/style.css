@@ -38,6 +38,7 @@ header p {
 .subscribe {
     margin-top: 100px;
     margin-bottom: 100px;
+    padding: 0 15px;
 }
 .subscribe a {
     height: 120px;
@@ -62,8 +63,15 @@ header p {
     letter-spacing: 2px;
 }
 /* activity */
+#activity {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
 #activity a {
     display: block;
+    text-decoration: none;
+    color: #222;
 }
 #activity img {
     width: 100%;
@@ -72,7 +80,37 @@ header p {
     object-position: center;
 }
 #activity .content {
-    border: 1px solid #bbbbbb;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
     overflow: hidden;
+}
+#activity span {
+    display: inline-block;
+    padding: 10px;
+}
+/* new */
+#new {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#new a {
+    display: block;
+    text-decoration: none;
+    color: #222;
+}
+#new img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#new .content {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#new span {
+    display: inline-block;
+    padding: 10px;
 }
