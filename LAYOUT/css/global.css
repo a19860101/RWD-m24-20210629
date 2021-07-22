@@ -1,5 +1,11 @@
 :root {
     --spacing: 5px; /*4px*/
+    --blue: #068cca;
+    --red: #ff4252;
+    --dark: #1b1b1b;
+    --light: #d1d1d1;
+    --black: #000;
+    --white: #fff;
 }
 * {
     box-sizing: border-box;
@@ -38,7 +44,20 @@ img {
 .w-100 {
     width: 100%;
 }
-
+/* background */
+.bg-blue {background-color: var(--blue);}
+.bg-red {background-color: var(--red);}
+.bg-dark {background-color: var(--dark);}
+.bg-light {background-color: var(--light);}
+.bg-black {background-color: var(--black);}
+.bg-white {background-color: var(--white);}
+/* color */
+.t-blue {color: var(--blue);}
+.t-red {color: var(--red);}
+.t-dark {color: var(--dark);}
+.t-light {color: var(--light);}
+.t-black {color: var(--black);}
+.t-white {color: var(--white);}
 /* BTN */
 .btn {
     display: inline-block;
@@ -47,20 +66,20 @@ img {
     border-radius: 6px;
 }
 .btn-blue {
-    background-color: #068cca;
-    color: #fff;
+    background-color: var(--blue);
+    color: var(--white);
 }
 .btn-red {
-    background-color: #ff4252;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
 }
 .btn-dark {
-    background-color: #1b1b1b;
-    color: #fff;
+    background-color: var(--dark);
+    color: var(--white);
 }
 .btn-light {
-    background-color: #d1d1d1;
-    color: #222;
+    background-color: var(--light);
+    color: var(--dark);
 }
 /* margin */
 .m-0 {margin: calc(var(--spacing) * 0);}
