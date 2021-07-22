@@ -20,6 +20,15 @@ header h1 {
 header p {
     font-size: 24px;
 }
+nav {
+    z-index: 9999;
+}
+nav .row {
+    align-items: baseline;
+}
+nav .logo {
+    font-size: 2em;
+}
 /* subscribe */
 /* .subscribe {
     background-color: #bebebe;
