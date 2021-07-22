@@ -91,6 +91,10 @@ header p {
 
 
 /* promotion */
+#promotion {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 #promotion img {
     width: 40%;
     height: 100%;

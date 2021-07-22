@@ -64,6 +64,10 @@ img {
 .t-light {color: var(--light);}
 .t-black {color: var(--black);}
 .t-white {color: var(--white);}
+/* text-decoration */
+.t-none {text-decoration: none;}
+.t-underline {text-decoration: underline;}
+.t-delete {text-decoration: line-through;}
 /* BTN */
 .btn {
     display: inline-block;
