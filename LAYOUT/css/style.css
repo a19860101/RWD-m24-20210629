@@ -112,3 +112,20 @@ header p {
 .promotion-price {
     bottom: 0;
 }
+/* blog */
+#blog {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+/* about */
+#about {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#about img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
