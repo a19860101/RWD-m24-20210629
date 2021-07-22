@@ -69,6 +69,10 @@ img {
 .t-none {text-decoration: none;}
 .t-underline {text-decoration: underline;}
 .t-delete {text-decoration: line-through;}
+/*  */
+.t-weight {
+    font-weight: bold;
+}
 /* BTN */
 .btn {
     display: inline-block;
