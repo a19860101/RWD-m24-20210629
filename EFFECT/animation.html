@@ -22,12 +22,34 @@
             25% {transform: translate(200px,0px)rotate(90deg);}
             50% {transform: translate(200px,200px)rotate(180deg);}
             75% {transform: translate(0px,200px)rotate(270deg);}
-            100% {transform: translate(0,0)rotate(360deg);}
+            100% {transform: translate(0,0)rotate(270deg);}
         }
         h1 {
-            animation: move 3s;
             background-color: #ccc;
             position: absolute;
+
+            animation: move 3s 3s infinite alternate ease-in-out;
+
+            /* animation-name: move; */
+
+            /* animation-duration: 3s; */
+
+            /* animation-delay: 0s; */
+
+            /* animation-fill-mode: forwards; */
+
+            /* forwards, backwards */
+
+            /* animation-direction: alternate; */
+            /* normal, reverse, alternate, alternate-reverse */
+
+            /* animation-iteration-count: infinite; */
+
+            /* animation-timing-function: ease-in-out; */
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+
+            /* animation-play-state: play; */
+            /* play, paused */
         }
 
     </style>
