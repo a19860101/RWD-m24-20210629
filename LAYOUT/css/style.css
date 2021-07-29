@@ -86,6 +86,15 @@ nav .logo {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     overflow: hidden;
+    transition: .6s;
+
+    /* box-shadow: 0 3px 10px rgba(0,0,0,.2); */
+    
+}
+
+.content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 12px rgba(0,0,0,.1);
 }
 
 /* new */
