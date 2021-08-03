@@ -20,12 +20,20 @@ header h1 {
 header p {
     font-size: 24px;
 }
+/* nav */
 nav {
     z-index: 9999;
     background-color: rgba(255,255,255,.96);
 }
+
 nav .row {
     align-items: baseline;
+    flex-direction: column;
+}
+@media(min-width: 720px){
+    nav .row {
+        flex-direction: row;
+    }
 }
 nav .logo {
     font-size: 2em;
@@ -36,6 +44,8 @@ nav a {
 nav a:hover {
     color: gray;
 }
+
+
 /* subscribe */
 /* .subscribe {
     background-color: #bebebe;
