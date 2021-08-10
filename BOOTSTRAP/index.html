@@ -32,7 +32,7 @@
             width: 70px;
             height: 70px;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 15px;                                
         }
         #portfolio .card-img-overlay {
             background-color: rgba(0,0,0,.7);
@@ -175,7 +175,7 @@
             </div>
         </div>
     </div>
-    <div id="portfolio" class="container section-padding">
+    <div id="blog" class="container section-padding">
         <div class="row">
             <div class="col-12 text-center mb-5">
                 <h2>最新文章</h2>
@@ -241,7 +241,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="card bg-light text-white">
                         <img src="https://picsum.photos/id/24/800/600" class="card-img" alt="...">
-                        <a class="card-img-overlay text-light text-decoration-none" href="#">
+                        <a class="card-img-overlay text-light text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#p1">
                             <h3 class="card-title">作品一</h5>
                             <p class="card-text">信譽而言當時之中聲音，自信給你圖象結婚神秘中學，創意你好任。</p>
                         </a>
@@ -250,8 +250,8 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="card bg-light text-white">
                         <img src="https://picsum.photos/id/34/800/600" class="card-img" alt="...">
-                        <a class="card-img-overlay text-light text-decoration-none" href="#">
-                            <h3 class="card-title">作品一</h5>
+                        <a class="card-img-overlay text-light text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#p2">
+                            <h3 class="card-title">作品二</h5>
                             <p class="card-text">信譽而言當時之中聲音，自信給你圖象結婚神秘中學，創意你好任。</p>
                         </a>
                     </div>
@@ -260,7 +260,7 @@
                     <div class="card bg-light text-white">
                         <img src="https://picsum.photos/id/44/800/600" class="card-img" alt="...">
                         <a class="card-img-overlay text-light text-decoration-none" href="#">
-                            <h3 class="card-title">作品一</h5>
+                            <h3 class="card-title">作品三</h5>
                             <p class="card-text">信譽而言當時之中聲音，自信給你圖象結婚神秘中學，創意你好任。</p>
                         </a>
                     </div>
@@ -311,6 +311,38 @@
                     </div>
                 </div>
                 
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="p1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">作品一</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://picsum.photos/id/24/800/600" class="w-100">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="p2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">作品二</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://picsum.photos/id/34/800/600" class="w-100">
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div> -->
             </div>
         </div>
     </div>
