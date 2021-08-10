@@ -39,12 +39,12 @@
                     <div class="mb-3">
                         <label for="gender" class="form-label d-block">性別</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="男">
-                            <label class="form-check-label" for="male">男</label>
+                            <input class="btn-check" type="radio" name="gender" id="male" value="男">
+                            <label class="btn btn-outline-primary" for="male">男</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="女">
-                            <label class="form-check-label" for="female">女</label>
+                            <input class="btn-check" type="radio" name="gender" id="female" value="女">
+                            <label class="btn btn-outline-danger" for="female">女</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="gender" id="unknown" value="不透露">
@@ -57,13 +57,13 @@
                             <input type="checkbox" name="skill" id="design" value="設計" class="form-check-input">
                             <label for="design" class="form-check-label">設計</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check  form-check-inline form-switch">
                             <input type="checkbox" name="skill" id="movie" value="剪輯" class="form-check-input">
                             <label for="movie" class="form-check-label">剪輯</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" name="skill" id="program" value="程式" class="form-check-input">
-                            <label for="program" class="form-check-label">程式</label>
+                            <input type="checkbox" name="skill" id="program" value="程式" class="btn-check">
+                            <label for="program" class="btn btn-outline-danger">程式</label>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -74,6 +74,7 @@
                         <label for="" class="form-label">內容</label>
                         <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                     </div>
+
                     <input type="submit" class="btn btn-primary w-100 d-block d-md-none" value="送出">
                     <input type="submit" class="btn btn-primary d-none d-md-block" value="送出">
                 </form>
