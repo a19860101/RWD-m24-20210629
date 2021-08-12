@@ -39,3 +39,18 @@ console.log(!x);
 
 let s = 0;
 console.log(!s);
+
+// 字串運算子
+let s1 = 'hello';
+let s2 = 'John';
+console.log(s1 +' '+ s2);
+console.log('您是第' + x + '位訪客');
+console.log(a + b);
+//字串樣板
+console.log(`${s1} ${s2}`);
+console.log(`您是第${x}位訪客`);
+
+
+// 三元運算子 (判斷式)
+
+// 分散運算子 spread operator
