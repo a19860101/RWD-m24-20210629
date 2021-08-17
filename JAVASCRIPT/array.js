@@ -13,7 +13,7 @@ let a = ['Apple','Banana','Cat','Dog'];
 // console.log(a[1]);
 // console.log(a[2]);
 
-console.log(a.length);
+// console.log(a.length);
 
 // 陣列迭代
 // for(let i=0;i<a.length;i++){
@@ -35,10 +35,16 @@ a.pop();
 // unshift(), shift()
 a.unshift('House');
 a.shift();
-console.log(a);
+// console.log(a);
 
 // indexOf
 
 // console.log(a.indexOf('egg'))
 let s = 'Hello';
-console.log(s.indexOf('p'))
+// console.log(s.indexOf('p'))
+
+// splice() 拼接
+
+// a.splice(2,2,'Test 1','Test 2');
+a.splice(1,1);
+console.log(a);
