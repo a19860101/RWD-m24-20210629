@@ -46,5 +46,11 @@ let s = 'Hello';
 // splice() 拼接
 
 // a.splice(2,2,'Test 1','Test 2');
-a.splice(1,1);
-console.log(a);
+// a.splice(1,1);
+// console.log(a);
+
+
+// slice() 切片
+let a_slice = a.slice(0,2);
+console.log(a_slice);
+
