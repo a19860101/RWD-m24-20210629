@@ -6,7 +6,7 @@
 // a[2] = 'Cat';
 
 // let a = new Array('Apple','Banana','Cat');
-let a = ['Apple','Banana','Cat','Dog'];
+let a = ['Apple','Dog','Cat','Banana'];
 
 // console.log(a);
 // console.log(a[0]);
@@ -63,3 +63,14 @@ console.log(str_array);
 let a_str = a.join('__');
 console.log(a_str);
 
+// toString() 陣列->字串
+console.log(a.toString());
+
+// sort() 遞增排序
+// console.log(a.sort())
+
+// reverse() 反轉陣列
+// console.log(a.reverse());
+// console.log(a.sort().reverse());
+
+console.log(str.split('').reverse().join(''));
