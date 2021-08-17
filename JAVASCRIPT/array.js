@@ -97,3 +97,13 @@ let total = num.reduce(function(a,b){
     return a + b;
 });
 console.log(total);
+
+//filter 過濾篩選
+let a_filter = a.filter(function(data){
+    return data.length > 3;
+});
+console.log(a_filter);
+let num_filter = num.filter(function(data){
+    return data % 2 == 0;
+})
+console.log(num_filter);
