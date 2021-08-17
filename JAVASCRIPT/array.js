@@ -88,3 +88,12 @@ let a_map = a.map(function(data){
 console.log(a_map);
 
 //function(){}
+
+// reduce() 
+let num = [12,345,43,22,55];
+let total = num.reduce(function(a,b){
+    console.log('a',a);
+    console.log('b',b);
+    return a + b;
+});
+console.log(total);
