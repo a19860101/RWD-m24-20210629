@@ -36,3 +36,9 @@ a.pop();
 a.unshift('House');
 a.shift();
 console.log(a);
+
+// indexOf
+
+// console.log(a.indexOf('egg'))
+let s = 'Hello';
+console.log(s.indexOf('p'))
