@@ -107,3 +107,11 @@ let num_filter = num.filter(function(data){
     return data % 2 == 0;
 })
 console.log(num_filter);
+
+let drinks = ['紅茶','綠茶','奶茶','拿鐵'];
+// concat
+console.log(a.concat(drinks));
+console.log(drinks.concat(a));
+
+console.log([...a,...drinks,'test']);
+console.log([...a])
