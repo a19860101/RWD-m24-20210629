@@ -52,5 +52,14 @@ let s = 'Hello';
 
 // slice() 切片
 let a_slice = a.slice(0,2);
-console.log(a_slice);
+// console.log(a_slice);
+
+//split() 分裂 字串->陣列
+let str = 'hello world';
+let str_array = str.split('');
+console.log(str_array);
+
+// join() 加入 陣列->字串
+let a_str = a.join('__');
+console.log(a_str);
 
