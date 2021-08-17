@@ -7,7 +7,6 @@
 
 // let a = new Array('Apple','Banana','Cat');
 let a = ['Apple','Dog','Cat','Banana','Egg'];
-
 // console.log(a);
 // console.log(a[0]);
 // console.log(a[1]);
@@ -114,4 +113,3 @@ console.log(a.concat(drinks));
 console.log(drinks.concat(a));
 
 console.log([...a,...drinks,'test']);
-console.log([...a])
