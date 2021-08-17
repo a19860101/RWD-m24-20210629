@@ -6,7 +6,7 @@
 // a[2] = 'Cat';
 
 // let a = new Array('Apple','Banana','Cat');
-let a = ['Apple','Dog','Cat','Banana'];
+let a = ['Apple','Dog','Cat','Banana','Egg'];
 
 // console.log(a);
 // console.log(a[0]);
@@ -57,14 +57,14 @@ let a_slice = a.slice(0,2);
 //split() 分裂 字串->陣列
 let str = 'hello world';
 let str_array = str.split('');
-console.log(str_array);
+// console.log(str_array);
 
 // join() 加入 陣列->字串
 let a_str = a.join('__');
-console.log(a_str);
+// console.log(a_str);
 
 // toString() 陣列->字串
-console.log(a.toString());
+// console.log(a.toString());
 
 // sort() 遞增排序
 // console.log(a.sort())
@@ -73,4 +73,18 @@ console.log(a.toString());
 // console.log(a.reverse());
 // console.log(a.sort().reverse());
 
-console.log(str.split('').reverse().join(''));
+// console.log(str.split('').reverse().join(''));
+
+// forEach()
+
+a.forEach(function(data, idx){
+    console.log(idx,data);
+})
+
+// map() 對應
+let a_map = a.map(function(data){
+    return data.length > 3 ? data : null ;
+})
+console.log(a_map);
+
+//function(){}
