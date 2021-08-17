@@ -38,3 +38,22 @@ for(let drink of drinks){
 drinks.forEach(function(drink){
     console.log(drink.name);
 })
+
+let drinks_name = drinks.map(function(data){
+    return data.name;
+})
+console.log(drinks_name);
+let drinks_price = drinks.map(function(data){
+    return data.price;
+})
+console.log(drinks_price);
+let total = drinks_price.reduce(function(a,b){
+    // return Number(a)+Number(b);
+    return parseInt(a)+parseInt(b);
+})
+console.log(total);
+
+let s = drinks.filter(function(data){
+    return data.price == 30;
+})
+console.log(s);
