@@ -21,6 +21,7 @@
 <body>
     <button class="addBtn">add</button>
     <button class="removeBtn">remove</button>
+    <button class="toggleBtn">toggle</button>
     <p class="content">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero dolorum minus eum pariatur dicta corrupti nulla praesentium dolore ipsum aspernatur, molestiae, distinctio explicabo, omnis provident nisi neque incidunt illum officiis.
     </p>
@@ -47,6 +48,10 @@
             // let p = document.querySelector('p');
             p.classList.remove('active');
         }
+       document.querySelector('.toggleBtn').onclick = () => {
+           p.classList.toggle('active');
+       }
+        
     </script>
 </body>
 </html>
