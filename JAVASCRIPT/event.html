@@ -5,24 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        p {
+            transition: .5s;
+        }
+        p.active {
+            color: #fff;
+            background-color: blue;
+            padding: 30px;
+            border-radius: 15px;
+            
+        }
+    </style>
 </head>
 <body>
-    <button>click</button>
-    <p>
+    <button class="addBtn">add</button>
+    <button class="removeBtn">remove</button>
+    <p class="content">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero dolorum minus eum pariatur dicta corrupti nulla praesentium dolore ipsum aspernatur, molestiae, distinctio explicabo, omnis provident nisi neque incidunt illum officiis.
     </p>
     <script>
         // let button = document.getElementsByTagName('button')[0];
-        let button = document.querySelector('button');
-        button.onclick = function(){
+        let addBtn = document.querySelector('.addBtn');
+        let p = document.querySelector('p');
+
+        addBtn.onclick = function(){
             console.log('click!!!');
-            let p = document.querySelector('p');
+            // let p = document.querySelector('p');
 
-            p.style.color = 'white';
-            p.style.backgroundColor = 'blue';
-            p.style.padding = '30px';
-            p.style.borderRadius = '15px';
+            // p.style.color = 'white';
+            // p.style.backgroundColor = 'blue';
+            // p.style.padding = '30px';
+            // p.style.borderRadius = '15px';
 
+            p.classList.add('active');
+            console.log(p.classList);
+
+        }
+        let removeBtn = document.querySelector('.removeBtn');
+        removeBtn.onclick = function(){
+            // let p = document.querySelector('p');
+            p.classList.remove('active');
         }
     </script>
 </body>
