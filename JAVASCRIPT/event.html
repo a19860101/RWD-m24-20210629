@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero dolorum minus eum pariatur dicta corrupti nulla praesentium dolore ipsum aspernatur, molestiae, distinctio explicabo, omnis provident nisi neque incidunt illum officiis.
+    </p>
+    <script>
+        // let button = document.getElementsByTagName('button')[0];
+        let button = document.querySelector('button');
+        button.onclick = function(){
+            console.log('click!!!');
+            let p = document.querySelector('p');
+
+            p.style.color = 'white';
+            p.style.backgroundColor = 'blue';
+            p.style.padding = '30px';
+            p.style.borderRadius = '15px';
+
+        }
+    </script>
+</body>
+</html>
