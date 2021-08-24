@@ -86,5 +86,21 @@
             </div>
         </div>
     </div>
+    <script>
+        let modalBtns = document.querySelectorAll('.modal-btn');
+        modalBtns.forEach(function(modalBtn){
+            modalBtn.onclick = function(){
+                let target = this.dataset.target;
+                document.querySelector(target).classList.add('active');
+            }
+        })
+        // modalBtns.forEach(modalBtn => {
+        //     modalBtn.onclick = event => {
+        //         let target = event.target.dataset.target;
+        //         console.log(target);
+        //         document.querySelector(target).classList.add('active');
+        //     }
+        // })
+    </script>
 </body>
 </html>
