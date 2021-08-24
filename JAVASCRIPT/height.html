@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            /* height: 200px; */
+            height: 0;
+
+            border: 2px solid #000;
+            padding: 0 15px;
+            overflow: hidden;
+        }
+        .box.active {
+            height: 138px;
+            /* padding: 15px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box active">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur consequatur deleniti repellendus voluptas debitis reiciendis sapiente eligendi expedita dicta velit ipsum minus cum laborum esse illo, ea eaque architecto nam?
+    </div>
+    <script>
+        let box = document.querySelector('.box');
+        console.log(box.clientHeight); //200 + 15 + 15 元素+內距
+        console.log(box.offsetHeight); //200 + 15 + 15 + 2 + 2 元素+內距+邊框
+        console.log(box.scrollHeight); //200 + 15 + 15 + 2 + 2 元素+內距 包含隱藏
+        // 138
+    </script>
+</body>
+</html>

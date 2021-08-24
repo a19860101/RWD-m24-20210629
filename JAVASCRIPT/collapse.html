@@ -12,7 +12,7 @@
             background-color: #fc9999;
             padding: 0 15px;
 
-            /* overflow: hidden; */
+            overflow: hidden;
             transition: .6s;
         }
         .collapse.active{
@@ -21,8 +21,19 @@
     </style>
 </head>
 <body>
-    <a href="#" class="collapse-btn" data-target="#c1">Link</a>
+    <a href="#" class="collapse-btn" data-target="#c1">Link 1</a>
     <div class="collapse" id="c1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
+    </div>
+    <a href="#" class="collapse-btn" data-target="#c2">Link 2</a>
+    <div class="collapse" id="c2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
+    </div>
+    <a href="#" class="collapse-btn" data-target="#c3">Link 3</a>
+    <div class="collapse" id="c3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
     </div>
     <script>
@@ -31,12 +42,13 @@
             btn.onclick = e =>{
                 let target = e.target.dataset.target;
                 let el = document.querySelector(target);
-                // console.log(el.style.height);
                 el.classList.toggle('active');
                 if(el.style.height){
                     el.style.height = null;
+                    console.log('1',el.style.height);
                 }else{
                     el.style.height = el.scrollHeight + 'px';
+                    console.log('2',el.style.height);
                 }
                 // document.querySelector(target).classList.toggle('active');
             }
