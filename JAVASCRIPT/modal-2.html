@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: 'Segoe UI';
+        }
+        /* .modal {
+        }
+        .modal.active 
+        {
+        } */
+        .modal-overlay {
+            background-color: rgb(0,0,0,.8);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: -2;
+            opacity: 0;
+            transition: .6s;
+        }
+        .modal-container {
+            background-color: #fff;
+            position: absolute;
+            width: 60%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-100%)scale(.5);
+            padding: 30px;
+            border-radius: 10px;
+
+            z-index: -1;
+            opacity: 0;
+            transition: .6s;
+
+        }
+        .modal.active .modal-overlay {
+            z-index: 8;
+            opacity: 1;
+        }
+        .modal.active .modal-container {
+            z-index: 9;
+            transform: translate(-50%,-50%)scale(1);
+            opacity: 1;
+        }
+        .modal-header {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 8px 15px;
+            background-color: #c32727;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#" data-target="#modal-1" class="modal-btn">modal 1</a>
+    <a href="#" data-target="#modal-2" class="modal-btn">modal 2</a>
+    <div class="modal" id="modal-1">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Modal 1</h3>
+            </div>
+            <div class="modal-body">
+                <p>最高春天級別員工上門專利回事，涉及郵遞區號，指導提醒的確經濟發展很熱事務體內，結束失去反映四個依靠有些，設置描述事實上阿摩斯，嘿嘿轉讓是啊信用改善小孩少女你就，資金觀看，留言板參與引用主持積極可愛製造都要沉默並不是心理，大概政府生氣差不多創作，家電湖口而。</p>
+                <p>微微我會，遵守對他女士日子利益最近賺錢少女同樣未經責任經濟有些，崇拜有效記憶西方身邊十分，裝備因素仔細十分這個問題新臺幣強大外國幾天就是發佈內存首先，通過出現在日期誘惑記住證明富岡律師，激情採取魅力方便公主基層驅動你怎不來下面不斷日常，這個一對因為戰鬥裝。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn modal-close">關閉</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal-2">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Modal 2</h3>
+            </div>
+            <div class="modal-body">
+                <p>存款性質完成的話請您品質轉變新聞認真創建，擁有畢業生地址安裝所謂主持他在把握，好好發表時間成績，用途青年權威內容前後發言安徽一臉民族經銷商適用於草魚介紹，我去我去調查處罰導演記錄，美女手機鈴聲新聞該公司只有，角色榮譽用戶名網際網路轉帖，條例參與，一切都依。</p>
+                <p>存款性質完成的話請您品質轉變新聞認真創建，擁有畢業生地址安裝所謂主持他在把握，好好發表時間成績，用途青年權威內容前後發言安徽一臉民族經銷商適用於草魚介紹，我去我去調查處罰導演記錄，美女手機鈴聲新聞該公司只有，角色榮譽用戶名網際網路轉帖，條例參與，一切都依。</p>
+                <p>存款性質完成的話請您品質轉變新聞認真創建，擁有畢業生地址安裝所謂主持他在把握，好好發表時間成績，用途青年權威內容前後發言安徽一臉民族經銷商適用於草魚介紹，我去我去調查處罰導演記錄，美女手機鈴聲新聞該公司只有，角色榮譽用戶名網際網路轉帖，條例參與，一切都依。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn modal-close">關閉</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let modalBtns = document.querySelectorAll('.modal-btn');
+        // modalBtns.forEach(function(modalBtn){
+        //     modalBtn.onclick = function(){
+        //         let target = this.dataset.target;
+        //         document.querySelector(target).classList.add('active');
+        //     }
+        // })
+        modalBtns.forEach(modalBtn => {
+            modalBtn.onclick = event => {
+                let target = event.target.dataset.target;
+                console.log(target);
+                document.querySelector(target).classList.add('active');
+            }
+        })
+
+        document.body.onclick = e => {
+           if(e.target.className.indexOf('modal-close') > -1){
+                document.querySelectorAll('.modal').forEach( m =>{
+                    m.classList.remove('active');
+                })
+           }
+        }
+
+        // let modalCloses = document.querySelectorAll('.modal-close');
+        // modalCloses.forEach(close => {
+        //     close.onclick = e => {
+        //         e.target.parentElement.parentElement.parentElement.classList.remove('active');
+        //     }
+        // })
+
+    </script>
+</body>
+</html>
