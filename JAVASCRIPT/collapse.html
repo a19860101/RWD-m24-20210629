@@ -12,11 +12,11 @@
             background-color: #fc9999;
             padding: 0 15px;
 
-            overflow: hidden;
+            /* overflow: hidden; */
             transition: .6s;
         }
         .collapse.active{
-            padding: 15px;
+            padding: 30px 15px;
         }
     </style>
 </head>
@@ -30,8 +30,15 @@
         cBtn.forEach(btn => {
             btn.onclick = e =>{
                 let target = e.target.dataset.target;
-                console.log(target);
-                document.querySelector(target).classList.toggle('active');
+                let el = document.querySelector(target);
+                // console.log(el.style.height);
+                el.classList.toggle('active');
+                if(el.style.height){
+                    el.style.height = null;
+                }else{
+                    el.style.height = el.scrollHeight + 'px';
+                }
+                // document.querySelector(target).classList.toggle('active');
             }
         })
     </script>
