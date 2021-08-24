@@ -19,26 +19,29 @@
     </style>
 </head>
 <body>
+    <button onclick="loadData()">load</button>
     <div class="container">
 
     </div>
     <script>
-        let url = 'https://jsonplaceholder.typicode.com/posts';
-        fetch(url)
-        .then(res=>res.json())
-        .then(datas => {
-            datas.forEach(data => {
-                let h2 = document.createElement('h2');
-                let content = document.createElement('div');
-                let article = document.createElement('article');
-                content.classList.add('content');
-                h2.append(data.title);
-                content.append(data.body);
-                article.append(h2,content);
-                document.querySelector('.container').append(article);
+        function loadData(){
+            document.querySelector('.container').textContent = '';
+            let url = 'https://jsonplaceholder.typicode.com/posts';
+            fetch(url)
+            .then(res=>res.json())
+            .then(datas => {
+                datas.forEach(data => {
+                    let h2 = document.createElement('h2');
+                    let content = document.createElement('div');
+                    let article = document.createElement('article');
+                    content.classList.add('content');
+                    h2.append(data.title);
+                    content.append(data.body);
+                    article.append(h2,content);
+                    document.querySelector('.container').append(article);
+                })
             })
-
-        })
+        }
     </script>
 </body>
 </html>
