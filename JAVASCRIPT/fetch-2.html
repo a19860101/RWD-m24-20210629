@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: auto;
+        }
+        article {
+            border: 1px solid #888888;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        let url = 'https://jsonplaceholder.typicode.com/posts';
+        fetch(url)
+        .then(res=>res.json())
+        .then(datas => {
+            datas.forEach(data => {
+                let h2 = document.createElement('h2');
+                let content = document.createElement('div');
+                let article = document.createElement('article');
+                content.classList.add('content');
+                h2.append(data.title);
+                content.append(data.body);
+                article.append(h2,content);
+                document.querySelector('.container').append(article);
+            })
+
+        })
+    </script>
+</body>
+</html>
