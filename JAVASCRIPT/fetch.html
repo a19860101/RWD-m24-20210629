@@ -7,14 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+
+    </div>
     <script>
         let url = 'data.json';
         fetch(url)
         .then(function(response){
             return response.json();
         })
-        .then(function(data){
-            console.log(data);
+        .then(function(datas){
+            datas.forEach(data=>{
+                let container = document.querySelector('.container');
+                let h1 = document.createElement('h1');
+                let p = document.createElement('p');
+                let div = document.createElement('div');
+                p.append(data.mail);
+                h1.append(data.name);
+                div.append(h1,p);
+                div.classList.add('box');
+                container.append(div);
+            })
         })
     </script>
 </body>
