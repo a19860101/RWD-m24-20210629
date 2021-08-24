@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .collapse {
+            width: 250px;
+            height: 0;
+            background-color: #fc9999;
+            padding: 0 15px;
+
+            overflow: hidden;
+            transition: .6s;
+        }
+        .collapse.active{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="collapse-btn" data-target="#c1">Link</a>
+    <div class="collapse" id="c1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iusto eius eveniet esse consectetur nihil, laudantium perspiciatis optio hic veniam. Laudantium perspiciatis ut, laborum fugit minus quos ratione. Minus, doloremque!
+    </div>
+    <script>
+        let cBtn = document.querySelectorAll('.collapse-btn');
+        cBtn.forEach(btn => {
+            btn.onclick = e =>{
+                let target = e.target.dataset.target;
+                console.log(target);
+                document.querySelector(target).classList.toggle('active');
+            }
+        })
+    </script>
+</body>
+</html>
