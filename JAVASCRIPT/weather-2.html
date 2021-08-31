@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+    <script>
+        let city = 'Tokyo';
+        let appid = 'b1ecbccd638b763d489602917ba47cc3';
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${appid}&lang=zh_TW&units=metric`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.list);
+            data.list.forEach(d => {
+                let temp = document.createElement('div');
+                temp.classList.add('temp');
+                temp.append(d.main.temp);
+
+                let img = document.createElement('img');
+                img.setAttribute('src',`http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`)
+
+                let feel = document.createElement('div');
+                feel.classList.add('feel');
+                feel.append('體感溫度',d.main.feels_like);
+
+                console.log(d.dt);//時間戳 
+                let myDate = new Date(d.dt * 1000);
+                console.log(myDate);
+                let date = document.createElement('div');
+                date.classList.add('date');
+                date.append(myDate);
+
+                document.querySelector('.container').append(date,temp,feel,img);
+            })
+        })
+    </script>
+</body>
+</html>
