@@ -30,12 +30,24 @@
                 feel.classList.add('feel');
                 feel.append('體感溫度',d.main.feels_like);
 
-                console.log(d.dt);//時間戳 
+                // console.log(d.dt);//時間戳 
                 let myDate = new Date(d.dt * 1000);
                 console.log(myDate);
+                console.log(myDate.getFullYear());
+                console.log(myDate.getMonth()+1);
+                console.log(myDate.getDate());
+                console.log(myDate.getDay());
+                console.log(myDate.getHours());
+                console.log(myDate.getMinutes());
+                console.log(myDate.getSeconds());
+                let week = ['日','一','二','三','四','五','六'];
                 let date = document.createElement('div');
                 date.classList.add('date');
-                date.append(myDate);
+                let date_content = `
+                    ${myDate.getMonth()+1}/${myDate.getDate()}(${week[myDate.getDay()]})
+                    ${myDate.getHours()}時
+                    `;
+                date.append(date_content);
 
                 document.querySelector('.container').append(date,temp,feel,img);
             })
