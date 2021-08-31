@@ -8,8 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>目前溫度</h1>
-        <div class="feels_like">體感溫度</div>
+        <h1>
+            <span class="temp">目前溫度</span>&deg;C
+            <span class="desc"></span>
+        </h1>
+        <div>
+            <img src="" alt="" class="icon">
+        </div>
+        <div>
+            <span class="feels_like">體感溫度</span>&deg;C
+        </div>
+        <div>
+            <span class="min"></span>/
+            <span class="max"></span>&deg;C
+        </div>
+        <div>
+            <span class="hum">濕度</span>%
+        </div>
     </div>
     <!-- b1ecbccd638b763d489602917ba47cc3 -->
     <script>
@@ -18,8 +33,17 @@
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            document.querySelector('h1').append(data.main.temp);
+            document.querySelector('.temp').append(data.main.temp);
+            document.querySelector('.desc').append(data.weather[0].description);
             document.querySelector('.feels_like').append(data.main.feels_like);
+            document.querySelector('.min').append(data.main.temp_min);
+            document.querySelector('.max').append(data.main.temp_max);
+            document.querySelector('.hum').append(data.main.humidity);
+            let icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            console.log(icon);
+            let img = document.querySelector('.icon');
+            img.setAttribute('src',icon);
+
         })
     </script>
 </body>
