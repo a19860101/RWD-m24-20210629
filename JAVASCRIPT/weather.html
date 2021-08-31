@@ -35,12 +35,12 @@
     <div>
         <select name="" id="city">
             <option>--請選擇--</option>
-            <option value="Taipei">台北</option>
+            <!-- <option value="Taipei">台北</option>
             <option value="Tokyo">東京</option>
             <option value="Seoul">首爾</option>
             <option value="Bangkok">曼谷</option>
             <option value="Singapore">新加坡</option>
-            <option value="Brazil">巴西</option>
+            <option value="Brazil">巴西</option> -->
         </select>
     </div>
     <br>
@@ -71,13 +71,26 @@
             {
                 name:'台北',
                 value: 'Taipei'
-            },
-            {
+            },{
                 name: '東京',
                 value: 'Tokyo'
+            },{
+                name: '首爾',
+                value: 'Seoul'
+            },{
+                name:'曼谷',
+                value: 'bangkok'
+            },{
+                name: '新加坡',
+                value: 'Singapore'
             }
         ];
-
+        cities.forEach(data => {
+            let option = document.createElement('option');
+            option.textContent = data.name;
+            option.value = data.value;
+            document.querySelector('#city').append(option);
+        })
 
         let container = document.querySelector('.container'); 
         container.style.display = 'none';
