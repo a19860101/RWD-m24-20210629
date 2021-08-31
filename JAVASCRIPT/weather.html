@@ -26,6 +26,9 @@
             padding: 15px;
             box-shadow: 1px 1px 20px rgba(0,0,0,.3);
         }
+        select {
+            padding: 8px 15px;
+        }
     </style>
 </head>
 <body>
@@ -42,49 +45,62 @@
     <br>
     <div class="container">
         <h1>
-            <span class="temp">目前溫度</span>&deg;C
+            目前溫度
+            <span class="temp"></span>&deg;C /
             <span class="desc"></span>
         </h1>
         <div>
             <img src="" alt="" class="icon">
         </div>
         <div>
-            <span class="feels_like">體感溫度</span>&deg;C
+            體感溫度<span class="feels_like"></span>&deg;C
         </div>
         <div>
-            <span class="min"></span>/
+            <span class="min"></span>
+            /
             <span class="max"></span>&deg;C
         </div>
         <div>
-            <span class="hum">濕度</span>%
+            濕度<span class="hum"></span>%
         </div>
     </div>
     <!-- b1ecbccd638b763d489602917ba47cc3 -->
     <script>
-        let city = document.querySelector('#city');
-        city.onchange = e => {
-            console.log(e.target.value)
+        document.querySelector('#city').onchange = e => {
+            let city = e.target.value;
+            let temp = document.querySelector('.temp');
+            let desc = document.querySelector('.desc');
+            let feel = document.querySelector('.feels_like');
+            let min = document.querySelector('.min');
+            let max = document.querySelector('.max');
+            let hum = document.querySelector('.hum');
+            temp.textContent = '';
+            desc.textContent = '';
+            feel.textContent = '';
+            min.textContent = '';
+            max.textContent = '';
+            hum.textContent = '';
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3`;
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                temp.append(data.main.temp);
+                desc.append(data.weather[0].description);
+                feel.append(data.main.feels_like);
+                min.append(data.main.temp_min);
+                max.append(data.main.temp_max);
+                hum.append(data.main.humidity);
+                let icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                console.log(icon);
+                let img = document.querySelector('.icon');
+                img.setAttribute('src',icon);
+            })
         }
 
 
 
-        let url = 'https://api.openweathermap.org/data/2.5/weather?q=taipei&units=metric&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3';
-        fetch(url)
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            document.querySelector('.temp').append(data.main.temp);
-            document.querySelector('.desc').append(data.weather[0].description);
-            document.querySelector('.feels_like').append(data.main.feels_like);
-            document.querySelector('.min').append(data.main.temp_min);
-            document.querySelector('.max').append(data.main.temp_max);
-            document.querySelector('.hum').append(data.main.humidity);
-            let icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-            console.log(icon);
-            let img = document.querySelector('.icon');
-            img.setAttribute('src',icon);
-
-        })
+        
     </script>
 </body>
 </html>
