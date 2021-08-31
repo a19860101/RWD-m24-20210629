@@ -40,6 +40,7 @@
             <option value="Seoul">首爾</option>
             <option value="Bangkok">曼谷</option>
             <option value="Singapore">新加坡</option>
+            <option value="Brazil">巴西</option>
         </select>
     </div>
     <br>
@@ -66,7 +67,22 @@
     </div>
     <!-- b1ecbccd638b763d489602917ba47cc3 -->
     <script>
+        let cities = [
+            {
+                name:'台北',
+                value: 'Taipei'
+            },
+            {
+                name: '東京',
+                value: 'Tokyo'
+            }
+        ];
+
+
+        let container = document.querySelector('.container'); 
+        container.style.display = 'none';
         document.querySelector('#city').onchange = e => {
+            container.style.display = 'block';
             let city = e.target.value;
             let temp = document.querySelector('.temp');
             let desc = document.querySelector('.desc');
