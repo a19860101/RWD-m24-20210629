@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI';
+        }
+        body {
+            background-color: #eee;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container{
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 1px 1px 20px rgba(0,0,0,.3);
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <select name="" id="city">
+            <option>--請選擇--</option>
+            <option value="Taipei">台北</option>
+            <option value="Tokyo">東京</option>
+            <option value="Seoul">首爾</option>
+            <option value="Bangkok">曼谷</option>
+            <option value="Singapore">新加坡</option>
+        </select>
+    </div>
+    <br>
     <div class="container">
         <h1>
             <span class="temp">目前溫度</span>&deg;C
@@ -28,6 +61,13 @@
     </div>
     <!-- b1ecbccd638b763d489602917ba47cc3 -->
     <script>
+        let city = document.querySelector('#city');
+        city.onchange = e => {
+            console.log(e.target.value)
+        }
+
+
+
         let url = 'https://api.openweathermap.org/data/2.5/weather?q=taipei&units=metric&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3';
         fetch(url)
         .then(res=>res.json())
