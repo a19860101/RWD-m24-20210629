@@ -6,23 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
-
+    <style>
+        .red {
+            color: #f00;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <button v-on:click="test()">click</button>
         <button @click="test()">click</button>
+        <button @click="test2()">Click</button>
+        <p :class="{red}">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum fugit ullam deleniti, corporis fuga qui ipsa animi ad saepe facilis impedit expedita odio et sunt vitae dolor dolores laudantium optio!
+        </p>
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
-
+                    red: false
                 }
             },
             methods:{
                 test(){
                     alert('Hello Vue');
+                },
+                test2(){
+                    this.red = !this.red
                 }
             }
 
