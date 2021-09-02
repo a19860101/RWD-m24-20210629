@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,56 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
+
 <body>
     <div id="app">
         <h1>{{title}}</h1>
         <p>{{desc}}</p>
+        <div>
+            {{items}}
+        </div>
+        <div>
+            <div v-for="item in items">{{item}}</div>
+            <ul>
+                <li v-for="(item,idx) of items">{{item}}-- {{idx}}</li>
+            </ul>
+        </div>
+        <a :href="link">link</a>
+        <img :src="img" alt="">
+        <div>
+            <div v-for="drink in drinks">{{drink.name}} ${{drink.price}}</div>
+        </div>
     </div>
     <script>
         Vue.createApp({
-            data(){
+            data() {
                 return {
                     title: 'Hello Vue!!',
-                    desc: 'lorem ipsum'
+                    desc: 'lorem ipsum',
+                    link: 'https://tw.yahoo.com',
+                    img: 'https://picsum.photos/id/45/300',
+                    items: ['Apple', 'Dog', 'Cat', 'Banana', 'Egg', 'test'],
+                    drinks: [
+                        {
+                            id: 1,
+                            name: '紅茶',
+                            price: '20'
+                        },
+                        {
+                            id: 2,
+                            name: '綠茶',
+                            price: '20'
+                        },
+                        {
+                            id: 3,
+                            name: '奶茶',
+                            price: '30'
+                        }
+                    ]
                 }
             }
         }).mount('#app');
     </script>
 </body>
+
 </html>
