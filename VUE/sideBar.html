@@ -20,6 +20,7 @@
             display: flex;
             flex-direction: column;
             transform: translateX(-100%);
+            transition:.4s;
         }
         .menu.active {
             transform: translateX(0%);
@@ -36,20 +37,32 @@
 <body>
     <div id="app">
         <nav>
-            <a href="#">link</a>
-            <div class="menu">
+            <a href="#" @click="isOpen = true">link</a>
+            <!-- <a href="#" @click="openMenu()">link</a> -->
+            <div class="menu" :class="{active:isOpen}">
                 <a href="#">link 1</a>
                 <a href="#">link 2</a>
                 <a href="#">link 3</a>
                 <a href="#">link 4</a>
-                <a href="#" class="close">X</a>
+                <a href="#" class="close" @click="isOpen = false">X</a>
+                <!-- <a href="#" class="close" @click="closeMenu">X</a> -->
             </div>
         </nav>
     </div>    
     <script>
         Vue.createApp({
             data(){
-                return {}
+                return {
+                    isOpen: false
+                }
+            },
+            methods:{
+                openMenu(){
+                    this.isOpen = true;
+                },
+                closeMenu(){
+                    this.isOpen = false;
+                }
             }
         }).mount('#app');
     </script>
