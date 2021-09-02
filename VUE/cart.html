@@ -7,12 +7,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@next"></script>
-
+    <style>
+        .thumbs {
+            display: flex;
+            width: 600px;
+        }
+        .thumb {
+            width: 20%;
+        }
+        .thumb img {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <h1>{{title}} -- {{colorName}}</h1>
         <img :src="`images/${img}`" alt="">
+        <div class="thumbs">
+            <div v-for="(product,idx) in products"  class="thumb">
+                <img :src="`images/${product.img}`" @click="selectedIndex = idx">
+            </div>
+        </div>
+        <div>
+            <div v-if="qty > 20">庫存充足</div>
+            <div v-else-if="qty > 0">少量庫存</div>
+            <div v-else>補貨中</div>
+        </div>
+        <div>
+            {{qty > 20 ? '庫存充足' : qty > 0 ? '少量庫存' : '補貨中'}}
+        </div>
     </div>
     <script>
         const products = [
@@ -61,7 +85,7 @@
             data(){
                 return{
                     products:products,
-                    selectedIndex: 2
+                    selectedIndex: 0
                 }
             },
             computed:{
@@ -73,6 +97,9 @@
                 },
                 colorName(){
                     return this.products[this.selectedIndex].colorName;
+                },
+                qty(){
+                    return this.products[this.selectedIndex].qty;
                 }
             }
         }).mount('#app')
