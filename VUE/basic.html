@@ -17,6 +17,9 @@
         <div v-else-if="qty > 0 ">低庫存</div>
         <div v-else>補貨中</div>
         <div>
+            {{qty > 10 ? '尚有庫存': qty > 0 ? '低庫存' : '補貨中'}}
+        </div>
+        <div>
             {{items}}
         </div>
         <div>
@@ -43,7 +46,7 @@
                     link: 'https://tw.yahoo.com',
                     img: 'https://picsum.photos/id/45/300',
                     items: ['Apple', 'Dog', 'Cat', 'Banana', 'Egg', 'test'],
-                    qty:34,
+                    qty:8,
                     drinks: [
                         {
                             id: 1,
