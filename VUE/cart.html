@@ -11,7 +11,8 @@
 </head>
 <body>
     <div id="app">
-        {{products}}
+        <h1>{{title}} -- {{colorName}}</h1>
+        <img :src="`images/${img}`" alt="">
     </div>
     <script>
         const products = [
@@ -59,7 +60,19 @@
         Vue.createApp({
             data(){
                 return{
-                    products:products
+                    products:products,
+                    selectedIndex: 2
+                }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIndex].img;
+                },
+                title(){
+                    return this.products[this.selectedIndex].name;
+                },
+                colorName(){
+                    return this.products[this.selectedIndex].colorName;
                 }
             }
         }).mount('#app')
