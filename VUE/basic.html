@@ -13,6 +13,9 @@
     <div id="app">
         <h1>{{title}}</h1>
         <p>{{desc}}</p>
+        <div v-if="qty > 10">尚有庫存</div>
+        <div v-else-if="qty > 0 ">低庫存</div>
+        <div v-else>補貨中</div>
         <div>
             {{items}}
         </div>
@@ -37,6 +40,7 @@
                     link: 'https://tw.yahoo.com',
                     img: 'https://picsum.photos/id/45/300',
                     items: ['Apple', 'Dog', 'Cat', 'Banana', 'Egg', 'test'],
+                    qty:9,
                     drinks: [
                         {
                             id: 1,
