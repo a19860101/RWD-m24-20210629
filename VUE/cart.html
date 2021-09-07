@@ -51,6 +51,19 @@
             line-height: 50px;
             text-align: center;
         }
+        img {
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1000px;
+            margin: auto;
+        }
+        .product-item {
+            flex: 0 0 25%;
+            padding: 15px;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +75,16 @@
                 <div class="cart-item-body"></div>
             </div>
         </nav>
-        {{isOpen}}
+        <div class="container">
+            <div class="product-item" v-for="product in products">
+                <div class="product-content">
+                    <img :src="`images/${product.img}`" alt="">
+                    <h3>{{product.name}}</h3>
+                    <div>NT${{product.price}}</div>
+                    <a href="#">加入購物車</a>
+                </div>
+            </div>
+        </div>
         
     </div>
     <script>
@@ -70,6 +92,7 @@
             {
                 id:1,
                 name:'純棉網眼抽縐polo衫',
+                price:299,
                 colorName:'黑色',
                 color:'#000',
                 img:'5341720_500.jpg',
@@ -78,6 +101,7 @@
             {
                 id:2,
                 name:'純棉網眼抽縐polo衫',
+                price:299,
                 colorName:'紫色',
                 color:'purple',
                 img:'5341702_500.jpg',
@@ -86,6 +110,7 @@
             {
                 id:3,
                 name:'純棉網眼抽縐polo衫',
+                price:299,
                 colorName:'紅色',
                 color:'#f00',
                 img:'5341707_500.jpg',
@@ -94,6 +119,7 @@
             {
                 id:4,
                 name:'純棉網眼抽縐polo衫',
+                price:299,
                 colorName:'綠色',
                 color:'green',
                 img:'5341716_500.jpg',
@@ -102,6 +128,7 @@
             {
                 id:5,
                 name:'純棉網眼抽縐polo衫',
+                price:299,
                 colorName:'黃色',
                 color:'yellow',
                 img:'5341714_500.jpg',
@@ -111,7 +138,8 @@
         Vue.createApp({
             data(){
                 return {
-                    isOpen: false
+                    isOpen: false,
+                    products:products
                 }
             }
         }).mount('#app');
