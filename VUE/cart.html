@@ -205,14 +205,19 @@
                 }
             },
             computed: {
-                priceArray(){
-                    return this.cartItems.map(data => data.price);
-                },
+                // priceArray(){
+                //     return this.cartItems.map(data => data.price);
+                // },
+                // total(){
+                //     if(this.cartItems.length > 0){
+                //         return this.priceArray.reduce((a,b)=>a+b);
+                //     }else{
+                //         return 0;
+                //     }
+                // }
                 total(){
                     if(this.cartItems.length > 0){
-                        return this.priceArray.reduce((a,b)=>a+b);
-                    }else{
-                        return 0;
+                        return this.cartItems.map(data=>data.price).reduce((a,b)=>a+b);
                     }
                 }
             }
