@@ -8,60 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@next"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe ui';
-        }
-        nav {
+        .thumbs {
             display: flex;
-            height: 50px;
-            background-color: #222;
-            align-items: center;
-            justify-content: space-between;
+            width: 600px;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            display: inline-block;
-            padding: 0 15px;
+        .thumb {
+            width: 20%;
         }
-        .cart-item {
-            position: fixed;
-            width: 400px;
-            height: 100%;
-            background-color: #ccc;
-            top: 0;
-            right: 0;
-            transform: translateX(100%)
-        }
-
-        .cart-item.active {
-            transform: translateX(0);
-        }
-        .cart-toggle {
-            position: absolute;
-            left: -50px;
-            width: 50px;
-            height: 50px;
-            background-color: #666;
-            line-height: 50px;
-            text-align: center;
+        .thumb img {
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <nav>
-            <a href="#">Logo</a>
-            <div class="cart-item active">
-                <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                <div class="cart-item-body"></div>
+        <h1>{{title}} -- {{colorName}}</h1>
+        <img :src="`images/${img}`" alt="">
+        <div class="thumbs">
+            <div v-for="(product,idx) in products"  class="thumb">
+                <img :src="`images/${product.img}`" @click="selectedIndex = idx">
             </div>
-        </nav>
-        
+        </div>
+        <div>
+            <div v-if="qty > 20">庫存充足</div>
+            <div v-else-if="qty > 0">少量庫存</div>
+            <div v-else>補貨中</div>
+        </div>
+        <div>
+            {{qty > 20 ? '庫存充足' : qty > 0 ? '少量庫存' : '補貨中'}}
+        </div>
+        <button v-if="qty > 0">加入購物車</button>
+        <button disabled v-else>補貨中</button>
     </div>
     <script>
         const products = [
@@ -108,9 +85,26 @@
         ];
         Vue.createApp({
             data(){
-                return {}
+                return{
+                    products:products,
+                    selectedIndex: 0
+                }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIndex].img;
+                },
+                title(){
+                    return this.products[this.selectedIndex].name;
+                },
+                colorName(){
+                    return this.products[this.selectedIndex].colorName;
+                },
+                qty(){
+                    return this.products[this.selectedIndex].qty;
+                }
             }
-        }).mount('#app');
+        }).mount('#app')
     </script>
 </body>
 </html>
