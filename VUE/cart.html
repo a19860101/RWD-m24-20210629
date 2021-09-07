@@ -15,6 +15,7 @@
             box-sizing: border-box;
             font-family: 'Segoe ui';
         }
+
         nav {
             display: flex;
             height: 50px;
@@ -32,7 +33,7 @@
             position: fixed;
             width: 400px;
             height: 100%;
-            background-color: #ccc;
+            background-color: #fff;
             top: 0;
             right: 0;
             transform: translateX(100%);
@@ -41,6 +42,8 @@
 
         .cart-item.active {
             transform: translateX(0);
+            box-shadow: -1px 0px 10px rgba(0,0,0,.3);
+
         }
         .cart-toggle {
             position: absolute;
@@ -75,6 +78,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            justify-content: space-between;
         }
         .clearCart {
             padding: 8px 12px;
@@ -83,6 +87,9 @@
             display: inline-block;
             background-color: #ff2744;
 
+        }
+        .cart-info {
+            margin-right: auto;
         }
     </style>
 </head>
@@ -97,11 +104,12 @@
                     <div v-if="cartItems.length == 0">目前是空的喔</div>
                     <div v-for="item in cartItems" class="items">
                         <img :src="`images/${item.img}`">
-                        <span>
+                        <span class="cart-info">
                             {{item.name}}{{item.colorName}}
                             <br>
                             NT${{item.price}}
                         </span>
+                        <i class="fas fa-trash-alt fa-lg"></i>
                     </div>
                     <hr>
                     <template v-if="cartItems.length > 0">
