@@ -112,9 +112,15 @@
                         <i class="fas fa-trash-alt fa-lg" @click="removeCart(idx)"></i>
                     </div>
                     <hr>
+                    
+                    <br>
                     <template v-if="cartItems.length > 0">
+                        <div>
+                            小計:{{total}}
+                        </div>
                         <a href="#" @click="clearCart()" class="clearCart">清空購物車</a>
                     </template>
+                    <br>
                 </div>
             </div>
         </nav>
@@ -196,6 +202,18 @@
                 },
                 removeCart(idx){
                     this.cartItems.splice(idx,1);
+                }
+            },
+            computed: {
+                priceArray(){
+                    return this.cartItems.map(data => data.price);
+                },
+                total(){
+                    if(this.cartItems.length > 0){
+                        return this.priceArray.reduce((a,b)=>a+b);
+                    }else{
+                        return 0;
+                    }
                 }
             }
         }).mount('#app');
