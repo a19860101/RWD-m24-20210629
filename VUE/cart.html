@@ -64,6 +64,26 @@
             flex: 0 0 25%;
             padding: 15px;
         }
+        .cart-item-body {
+            padding: 30px;
+        }
+        .cart-item img {
+            width: 100px;
+            margin-right: 5px;
+        }
+        .items {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .clearCart {
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: #fff;
+            display: inline-block;
+            background-color: #ff2744;
+
+        }
     </style>
 </head>
 <body>
@@ -73,9 +93,20 @@
             <div class="cart-item" :class="{active:isOpen}" >
                 <a href="#" class="cart-toggle" @click="isOpen = !isOpen"><i class="fas fa-shopping-cart fa-lg"></i></a>
                 <div class="cart-item-body">
-                    <div v-for="item in cartItems">
-                        {{item.name}}{{item.colorName}}
+                    <h4>購物車</h4>
+                    <div v-if="cartItems.length == 0">目前是空的喔</div>
+                    <div v-for="item in cartItems" class="items">
+                        <img :src="`images/${item.img}`">
+                        <span>
+                            {{item.name}}{{item.colorName}}
+                            <br>
+                            NT${{item.price}}
+                        </span>
                     </div>
+                    <hr>
+                    <template v-if="cartItems.length > 0">
+                        <a href="#" @click="clearCart()" class="clearCart">清空購物車</a>
+                    </template>
                 </div>
             </div>
         </nav>
@@ -148,8 +179,12 @@
             },
             methods:{
                 addToCart(idx){
-                    this.cartItems.push(this.products[idx]);
+                    // this.cartItems.push(this.products[idx]);
+                    this.cartItems = [...this.cartItems,this.products[idx]]
                     console.log(idx)
+                },
+                clearCart(){
+                    this.cartItems.length = 0;
                 }
             }
         }).mount('#app');
