@@ -103,9 +103,9 @@
                     <h4>購物車</h4>
                     <div v-if="cartItems.length == 0">目前是空的喔</div>
                     <div v-for="(item,idx) in cartItems" class="items">
-                        <img :src="`images/${item.img}`">
+                        <img :src="item.image">
                         <span class="cart-info">
-                            {{item.name}}{{item.colorName}}
+                            {{item.title}}
                             <br>
                             NT${{item.price}}
                         </span>
@@ -127,8 +127,8 @@
         <div class="container">
             <div class="product-item" v-for="(product,idx) in products">
                 <div class="product-content">
-                    <img :src="`images/${product.img}`" alt="">
-                    <h3>{{product.name}}</h3>
+                    <img :src="product.image" alt="">
+                    <h3>{{product.title}}</h3>
                     <div>NT${{product.price}}</div>
                     <a href="#" @click="addToCart(idx)">加入購物車</a>
                 </div>
@@ -187,7 +187,7 @@
             data(){
                 return {
                     isOpen: false,
-                    products:products,
+                    products:[],
                     cartItems:[]
                 }
             },
@@ -219,8 +219,17 @@
                     if(this.cartItems.length > 0){
                         return this.cartItems.map(data=>data.price).reduce((a,b)=>a+b);
                     }
+                },
+                
+            },
+            created(){
+                    fetch('https://fakestoreapi.com/products')
+                    .then(res=>res.json())
+                    .then(data=>{
+                        this.products = data;
+                        console.log(data);
+                    })
                 }
-            }
         }).mount('#app');
     </script>
 </body>
