@@ -37,6 +37,8 @@
         <div>
             {{qty > 20 ? '庫存充足' : qty > 0 ? '少量庫存' : '補貨中'}}
         </div>
+        <button v-if="qty > 0">加入購物車</button>
+        <button disabled v-else>補貨中</button>
     </div>
     <script>
         const products = [
