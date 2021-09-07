@@ -102,14 +102,14 @@
                 <div class="cart-item-body">
                     <h4>購物車</h4>
                     <div v-if="cartItems.length == 0">目前是空的喔</div>
-                    <div v-for="item in cartItems" class="items">
+                    <div v-for="(item,idx) in cartItems" class="items">
                         <img :src="`images/${item.img}`">
                         <span class="cart-info">
                             {{item.name}}{{item.colorName}}
                             <br>
                             NT${{item.price}}
                         </span>
-                        <i class="fas fa-trash-alt fa-lg"></i>
+                        <i class="fas fa-trash-alt fa-lg" @click="removeCart(idx)"></i>
                     </div>
                     <hr>
                     <template v-if="cartItems.length > 0">
@@ -193,6 +193,9 @@
                 },
                 clearCart(){
                     this.cartItems.length = 0;
+                },
+                removeCart(idx){
+                    this.cartItems.splice(idx,1);
                 }
             }
         }).mount('#app');
