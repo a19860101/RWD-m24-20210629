@@ -35,7 +35,8 @@
             background-color: #ccc;
             top: 0;
             right: 0;
-            transform: translateX(100%)
+            transform: translateX(100%);
+            transition: .4s;
         }
 
         .cart-item.active {
@@ -56,11 +57,12 @@
     <div id="app">
         <nav>
             <a href="#">Logo</a>
-            <div class="cart-item active">
-                <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart fa-lg"></i></a>
+            <div class="cart-item" :class="{active:isOpen}" >
+                <a href="#" class="cart-toggle" @click="isOpen = !isOpen"><i class="fas fa-shopping-cart fa-lg"></i></a>
                 <div class="cart-item-body"></div>
             </div>
         </nav>
+        {{isOpen}}
         
     </div>
     <script>
@@ -108,7 +110,9 @@
         ];
         Vue.createApp({
             data(){
-                return {}
+                return {
+                    isOpen: false
+                }
             }
         }).mount('#app');
     </script>
