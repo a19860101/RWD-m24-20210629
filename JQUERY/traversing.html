@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>title</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nostrum eveniet provident facilis illo cumque voluptatibus laboriosam, repellendus labore officia! Facilis a velit quia cumque eaque molestias! Laudantium, error quam.
+        </p>
+        <ul>
+            <li><a href="#">link 1</a></li>
+            <li><a href="#">link 2</a></li>
+            <li><a href="#">link 3</a></li>
+            <li><a href="#">link 4</a></li>
+        </ul>
+        <a href="#">link</a>
+    </div>
+    <script>
+        $(function(){
+            // 同輩元素
+            // let el = $('ul').next();
+            // let el = $('ul').prev();
+            // let el = $('ul').siblings();
+            // let el = $('ul').siblings('h1');
+            // let el = $('li').eq(1);
+
+            // 父元素
+            // let el = $('ul').parent();
+            // let el = $('ul').parents();
+            // let el = $('ul').parents('.container');
+            // let el = $('ul').closest('.container');
+
+            //子元素
+            // let el = $('.container').children();
+
+            //子元素、後代元素
+            // let el = $('.container').find('a');
+            // let el = $('.container').find('ul').find('a');
+            // let el = $('.container ul').find('a');
+            let el = $('.container ul a');
+
+
+            console.log(el);
+        })
+    </script>
+</body>
+</html>
