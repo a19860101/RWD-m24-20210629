@@ -19,6 +19,7 @@
             padding-top: 15px;
             padding-bottom: 15px;
             text-align: center;
+            position: fixed;
         }
         nav a {
             display: inline-block;
@@ -48,6 +49,16 @@
         #contact {
             background-color: #95E1D3;
         }
+        #gotop {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -73,17 +84,25 @@
     <div id="contact" class="container">
         <h2>Contact</h2>
     </div>
+    <a href="#" id="gotop">TOP</a>
     <script>
         $(function(){
             let speed = 600;
             $('nav').find('a').click(function(){
                 let target = $(this).data('target');
                 console.log(target);
+                
                 let h = $(target).offset().top;
                 console.log(h);
+
                 $('html,body').animate({
                     scrollTop: h
                 },speed);
+            })
+            $('#gotop').click(function(){
+                $('html,body').animate({
+                    scrollTop: 0
+                },speed)
             })
         })
     </script>
