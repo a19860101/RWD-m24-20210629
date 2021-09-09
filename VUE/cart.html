@@ -91,6 +91,18 @@
         .cart-info {
             margin-right: auto;
         }
+        .cart-num {
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #f00;
+            border-radius: 50%;
+            color: #fff;
+            top: 5px;
+            right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -98,7 +110,10 @@
         <nav>
             <a href="#">Logo</a>
             <div class="cart-item" :class="{active:isOpen}" >
-                <a href="#" class="cart-toggle" @click="isOpen = !isOpen"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <a href="#" class="cart-toggle" @click="isOpen = !isOpen">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span class="cart-num" v-if="cartNum > 0">{{cartNum}}</span>
+                </a>
                 <div class="cart-item-body">
                     <h4>購物車</h4>
                     <div v-if="cartItems.length == 0">目前是空的喔</div>
@@ -220,6 +235,9 @@
                         return this.cartItems.map(data=>data.price).reduce((a,b)=>a+b);
                     }
                 },
+                cartNum(){
+                    return this.cartItems.length;
+                }
                 
             },
             created(){
