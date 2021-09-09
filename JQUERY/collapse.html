@@ -19,12 +19,13 @@
             margin: auto;
         }
         h2 {
-            background-color: #ccc;
+            background-color: #eee;
             padding: 8px;
             border-bottom: 1px solid #aaa;
+            cursor:pointer;
         }
         .content {
-            background-color: #ccc;
+            background-color: #eee;
             padding: 15px;
             border-bottom: 1px solid #bbb;
             display: none;
@@ -49,6 +50,15 @@
         <div class="content">
             廣場意思詢問積極知識財務提醒婦女聰明心裡治療，能量出版社，低價軟體交通其中不同模擬萬華初音宅宅頭銜您是開通很少高雄不大，家族日子寬頻之間感染上去一遍下載有關部門據說而且，為什麼的是所有一看那時這樣，我國會議下去原文是怎麼國有居民練習日期足球門口準確，經濟。
         </div>
-    </div>    
+    </div> 
+    <script>
+        $(function(){
+            $('h2').click(function(){
+                // $(this).next().toggle(600);
+                // $(this).next().fadeToggle(600);
+                $(this).next().slideToggle();
+            })
+        })
+    </script>   
 </body>
 </html>
