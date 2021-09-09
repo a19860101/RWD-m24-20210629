@@ -69,5 +69,34 @@
     <div id="contact" class="container">
         <h2>Contact</h2>
     </div>
+    <script>
+        $(function(){
+            let speed = 600;
+            let a = $('#about').offset().top;
+            let p = $('#product').offset().top;
+            let s = $('#service').offset().top;
+            let c = $('#contact').offset().top;
+            $('nav').find('a').eq(0).click(function(){
+                $('html,body').animate({
+                    scrollTop: a
+                },speed);
+            })
+            $('nav').find('a').eq(1).click(function(){
+                $('html,body').animate({
+                    scrollTop: p
+                },speed);
+            })
+            $('nav').find('a').eq(2).click(function(){
+                $('html,body').animate({
+                    scrollTop: s
+                },speed);
+            })
+            $('nav').find('a').eq(3).click(function(){
+                $('html,body').animate({
+                    scrollTop: c
+                },speed);
+            })
+        })
+    </script>
 </body>
 </html>
