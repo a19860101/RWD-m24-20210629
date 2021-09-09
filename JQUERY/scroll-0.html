@@ -52,11 +52,10 @@
 </head>
 <body>
     <nav>
-        <a href="#" data-target="#about">About</a>
-        <a href="#" data-target="#product">Product</a>
-        <a href="#" data-target="#service">Service</a>
-        <a href="#" data-target="#blog">Blog</a>
-        <a href="#" data-target="#contact">Contact</a>
+        <a href="#">About</a>
+        <a href="#">Product</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
     </nav>
     <div id="about" class="container">
         <h2>About</h2>
@@ -67,22 +66,34 @@
     <div id="service" class="container">
         <h2>Service</h2>
     </div>
-    <div id="blog" class="container">
-        <h2>Blog</h2>
-    </div>
     <div id="contact" class="container">
         <h2>Contact</h2>
     </div>
     <script>
         $(function(){
             let speed = 600;
-            $('nav').find('a').click(function(){
-                let target = $(this).data('target');
-                console.log(target);
-                let h = $(target).offset().top;
-                console.log(h);
+            let a = $('#about').offset().top;
+            let p = $('#product').offset().top;
+            let s = $('#service').offset().top;
+            let c = $('#contact').offset().top;
+            $('nav').find('a').eq(0).click(function(){
                 $('html,body').animate({
-                    scrollTop: h
+                    scrollTop: a
+                },speed);
+            })
+            $('nav').find('a').eq(1).click(function(){
+                $('html,body').animate({
+                    scrollTop: p
+                },speed);
+            })
+            $('nav').find('a').eq(2).click(function(){
+                $('html,body').animate({
+                    scrollTop: s
+                },speed);
+            })
+            $('nav').find('a').eq(3).click(function(){
+                $('html,body').animate({
+                    scrollTop: c
                 },speed);
             })
         })
