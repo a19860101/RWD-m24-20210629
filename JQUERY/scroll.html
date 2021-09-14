@@ -92,7 +92,7 @@
     <script>
         $(function(){
             let speed = 600;
-            $('nav').find('a').click(function(){
+            $('nav').find('a').click(function(e){
                 let target = $(this).data('target');
                 console.log(target);
                 
@@ -102,19 +102,26 @@
                 $('html,body').animate({
                     scrollTop: h
                 },speed);
+
+                // return false;
+                e.preventDefault();
             })
-            $('#gotop').click(function(){
+            $('#gotop').click(function(e){
                 $('html,body').animate({
                     scrollTop: 0
-                },speed)
+                },speed);
+                // return false;
+                e.preventDefault();
             })
             $(window).scroll(function(){
                 let h = $(window).scrollTop();
                 console.log(h);
                 if(h > 600){
-                    $('#gotop').show();
+                    // $('#gotop').show();
+                    $('#gotop').fadeIn();
                 }else{
-                    $('#gotop').hide();
+                    // $('#gotop').hide();
+                    $('#gotop').fadeOut();
                 }
             })
         })
