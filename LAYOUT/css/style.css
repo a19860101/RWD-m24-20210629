@@ -177,3 +177,22 @@ footer {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+#gotop {
+    /* display: none; */
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #131313;
+    border-radius: 50%;
+    color: #fff;
+    transform: translateX(200%)rotate(180deg);
+    transition: 1s;
+}
+#gotop.active {
+    transform: translateX(0)rotate(0);
+}
