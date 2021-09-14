@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -50,14 +51,17 @@
             background-color: #95E1D3;
         }
         #gotop {
+            display: none;
             position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            background-color: #fff;
+            background-color: #131313;
+            border-radius: 50%;
+            color: #fff;
         }
     </style>
 </head>
@@ -84,7 +88,7 @@
     <div id="contact" class="container">
         <h2>Contact</h2>
     </div>
-    <a href="#" id="gotop">TOP</a>
+    <a href="#" id="gotop"><i class="fas fa-chevron-up fa-lg"></i></a>
     <script>
         $(function(){
             let speed = 600;
@@ -103,6 +107,15 @@
                 $('html,body').animate({
                     scrollTop: 0
                 },speed)
+            })
+            $(window).scroll(function(){
+                let h = $(window).scrollTop();
+                console.log(h);
+                if(h > 600){
+                    $('#gotop').show();
+                }else{
+                    $('#gotop').hide();
+                }
             })
         })
     </script>
