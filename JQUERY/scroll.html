@@ -21,6 +21,19 @@
             padding-bottom: 15px;
             text-align: center;
             position: fixed;
+            transition: .6s;
+        }
+        nav.active{
+            background-color: rgba(255,255,255,.8);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        nav.active a {
+            color: #000;
+        }
+        nav.active a.active{
+            background-color: #222;
+            color: #fff;
         }
         nav a {
             display: inline-block;
@@ -34,6 +47,7 @@
             background-color: #fff;
             color: #222;
         }
+        
         .container {
             display: flex;
             height: 100vh;
@@ -133,10 +147,12 @@
                     // $('#gotop').show();
                     // $('#gotop').fadeIn();
                     $('#gotop').addClass('active');
+                    $('nav').addClass('active');
                 }else{
                     // $('#gotop').hide();
                     // $('#gotop').fadeOut();
                     $('#gotop').removeClass('active');
+                    $('nav').removeClass('active');
                 }
 
                 $('nav').find('a').each(function(){
