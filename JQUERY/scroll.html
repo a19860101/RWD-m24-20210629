@@ -26,8 +26,13 @@
             display: inline-block;
             text-decoration: none;
             color: #fff;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: .4s;
+        }
+        nav a.active {
+            background-color: #fff;
+            color: #222;
         }
         .container {
             display: flex;
@@ -72,7 +77,7 @@
 </head>
 <body>
     <nav>
-        <a href="#" data-target="#about">About</a>
+        <a href="#" data-target="#about" class="active">About</a>
         <a href="#" data-target="#product">Product</a>
         <a href="#" data-target="#service">Service</a>
         <a href="#" data-target="#blog">Blog</a>
@@ -107,7 +112,8 @@
                 $('html,body').animate({
                     scrollTop: h
                 },speed);
-
+                $('nav').find('a').removeClass('active');
+                $(this).addClass('active');
                 // return false;
                 e.preventDefault();
             })
