@@ -21,6 +21,16 @@
             width: 100%;
             margin: auto;
         }
+        .products {
+            width: 1000px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+        }
+        .product{
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
@@ -44,6 +54,41 @@
             <img src="https://picsum.photos/id/57/1600/600" alt="">
         </div>
     </header>
+    <div class="products">
+        <div class="product">
+            <img src="https://picsum.photos/id/33/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/34/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/35/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/36/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/37/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/38/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/39/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/13/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/14/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/15/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/16/400" alt="">
+        </div>
+    </div>
     <script>
         $(function(){
             $('header').slick({
@@ -53,6 +98,11 @@
                 slidesToShow: 3,
                 slidesToScroll: 1
             });
+            $('.products').slick({
+                slidesToShow: 3,
+                centerMode: true,
+                centerPadding: '50px'
+            })
         })
     </script>
 </body>
