@@ -39,10 +39,26 @@
             /* transform: translateY(-50%); */
             text-align: center;
         }
+        .products {
+            max-width: 1000px;
+            margin: auto;
+
+        }
     </style>
 </head>
 
 <body>
+    <!-- 
+        優點
+        center模式較好用
+        結構較簡易
+        
+        缺點
+        多張照片顯示時，沒有辦法設定單張滑動；若要單張滑動要啟動center
+        nav預設樣式很醜
+
+
+     -->
     <header class="owl-carousel owl-theme">
         <div class="item">
             <img src="https://picsum.photos/id/87/1600/600" alt="">
@@ -69,12 +85,58 @@
             <h2>hello 6</h2>
         </div>
     </header>
+    <div class="products owl-carousel owl-theme">
+        <div class="product">
+            <img src="https://picsum.photos/id/33/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/34/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/35/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/36/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/37/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/38/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/39/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/13/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/14/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/15/400" alt="">
+        </div>
+        <div class="product">
+            <img src="https://picsum.photos/id/16/400" alt="">
+        </div>
+    </div>
     <script>
         $(function(){
             $('header').owlCarousel({
                 items:1,
-                autoplay: true
+                autoplay: true,
+                loop:true,
+                stagePadding: 100,
+                dots:false,
+                nav: true
             });
+            $('.products').owlCarousel({
+                items: 4,
+                margin: 15,
+                autoplay: true,
+                loop: true,
+                center: true
+            })
         })
     </script>
 </body>
