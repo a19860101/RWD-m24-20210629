@@ -14,8 +14,11 @@
             margin: 0;
             padding: 0;
         }
+        body {
+            background-color: #ff6f6f;
+        }
         header {
-            width: 1200px;
+            width: 100%;
             margin: auto;
         }
     </style>
@@ -37,10 +40,19 @@
         <div class="item">
             <img src="https://picsum.photos/id/47/1600/600" alt="">
         </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/57/1600/600" alt="">
+        </div>
     </header>
     <script>
         $(function(){
-            $('header').slick();
+            $('header').slick({
+                autoplay: true,
+                arrows: false,
+                dots: true,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            });
         })
     </script>
 </body>
