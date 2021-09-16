@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+
         header {
             width: 100%;
             margin: auto;
         }
+
         .products {
-            width: 1000px;
+            max-width: 1000px;
             margin: auto;
         }
+
         img {
             width: 100%;
         }
-        .product{
+
+        .product {
             margin: 5px;
         }
+
         .item {
             position: relative;
 
         }
-        .item h2{
+
+        .item h2 {
             font-size: 60px;
             position: absolute;
-            background-color: rgba(255,255,255,.7);
+            background-color: rgba(255, 255, 255, .7);
             width: 100%;
             bottom: 0;
             /* top: 50%; */
             /* transform: translateY(-50%); */
             text-align: center;
         }
-        .slick-next:before, .slick-prev:before {
+
+        .slick-next:before,
+        .slick-prev:before {
             color: #000;
-            font-size:24px;
+            font-size: 24px;
         }
+
         .slick-next {
             right: 47%;
         }
+
         .slick-prev {
             left: 47%;
         }
-        .slick-next, .slick-prev {
+
+        @media(max-width: 1000px){
+            .slick-next {
+                right: 45%;
+            }
+
+            .slick-prev {
+                left: 45%;
+            }
+        }
+
+        .slick-next,
+        .slick-prev {
             top: initial;
             bottom: -35px;
         }
+
         .product {
             opacity: .3;
             transform: scale(.8);
             transition: .4s;
         }
+
         .product.slick-center {
             opacity: 1;
             transform: scale(1);
@@ -68,7 +100,14 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- 
+        缺點
+        centerMode 無法使用偶數輪播
+        結構太過複雜
+        rwd用 大到小的寫法
+     -->
     <header>
         <div class="item">
             <img src="https://picsum.photos/id/87/1600/600" alt="">
@@ -137,7 +176,7 @@
     <br>
     <br>
     <script>
-        $(function(){
+        $(function () {
             $('header').slick({
                 autoplay: true,
                 arrows: false,
@@ -146,11 +185,27 @@
                 slidesToScroll: 1
             });
             $('.products').slick({
-                slidesToShow: 3,
+                slidesToShow: 5,
                 centerMode: true,
-                centerPadding: '50px'
+                centerPadding: '50px',
+                responsive: [
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            centerPadding: '0'
+                        }
+                    }
+                ]
             })
         })
     </script>
 </body>
+
 </html>
