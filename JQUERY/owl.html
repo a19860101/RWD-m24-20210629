@@ -53,6 +53,7 @@
         優點
         center模式較好用
         結構較簡易
+        rwd較好控制
 
         缺點
         多張照片顯示時，沒有辦法設定單張滑動；若要單張滑動要啟動center
@@ -134,11 +135,22 @@
 
             });
             $('.products').owlCarousel({
-                items: 4,
+                items: 1,
                 margin: 15,
                 autoplay: true,
                 loop: true,
                 center: true,
+                dots:false,
+                responsive:{
+                    600: {
+                        items:3,
+                        dots: true
+                    },
+                    1000: {
+                        items: 5,
+                        dots: true
+                    }
+                }
             })
         })
     </script>
